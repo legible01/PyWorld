@@ -4,10 +4,11 @@ import socket
 
 print('다음과 같이 URL을 입력하세요. ex:www.naver.com')
 URL = input("input URL:")
+#잘못된 URL혹은 인터넷 불량시 오류메세지출력.
 try:
     HOST = socket.gethostbyname(URL)
 except socket.gaierror as error:
-    print('주소를 가져올수가 없습니다.\n인터넷 연결 혹은 올바른 주소를 입력하세\n',error)
+    print('주소를 가져올수가 없습니다.\n인터넷 연결 혹은 올바른 주소를 입력하세요\n',error)
 
 PORT = socket.getservbyname('http','tcp')
 
